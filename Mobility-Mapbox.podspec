@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   TODO: Add long description of the pod here.
                          DESC
   
-  s.homepage         = 'https://github.com/arhs-spikeseed-mobile/bancontact-ios/'
+  s.homepage         = 'https://github.com/imranMnts/maplibre-navigation-ios/'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Imran MENTESE' => 'imran.mentese@arhs-spikeseed.com' }
   s.source           = { :git => 'git@github.com/imranMnts/maplibre-navigation-ios.git', :tag => s.version.to_s }
