@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.name = "Mobility-MapboxNavigation"
+  s.name = "MapboxCoreNavigation"
   s.version = "1.0.2"
-  s.summary = "Complete turn-by-turn navigation interface for iOS."
+  s.summary = "Core components for turn-by-turn navigation on iOS."
 
   s.description  = <<-DESC
-  The Mapbox Navigation SDK for iOS is a drop-in interface for turn-by-turn navigation along a route, complete with a well-designed map and easy-to-understand spoken directions. Routes are powered by Mapbox Directions.
+  Mapbox Core Navigation provides the core spatial and timing logic for turn-by-turn navigation along a route. For a complete turn-by-turn navigation interface, use the Mapbox Navigation SDK for iOS (MapboxNavigation).
                    DESC
 
   s.homepage = "https://www.mapbox.com/ios-sdk/navigation/"
@@ -26,27 +26,24 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "13.0"
 
+
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.source = { :git => "https://github.com/imranMnts/maplibre-navigation-ios.git", :tag => "#{s.version.to_s}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.source_files = ["MapboxNavigation/**/*.{h,m,swift}", "MapboxCoreNavigation/{Date,Sequence,String}.swift"]
-
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-
-  s.resources = ['MapboxNavigation/Resources/*/*', 'MapboxNavigation/Resources/*']
+  s.source_files = "MapboxCoreNavigation"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.requires_arc = true
-  s.module_name = "MapboxNavigation"
+  s.module_name = "MapboxCoreNavigation"
 
-  s.dependency "Mapbox-iOS-SDK", "~> 4.3"
-  s.dependency "Solar", "~> 2.1"
-  s.dependency "MapboxSpeech", "~> 0.0.1"
-  s.dependency "MapboxGeocoder.swift", "~> 0.15"
+  s.dependency "MapboxDirections.swift", "~> 0.23.0"
+  s.dependency "MapboxMobileEvents", "~> 0.5"
+  s.dependency "Turf", "~> 0.2"
+  s.dependency "Polyline", "~> 4.0"
 
   # `swift_version` was introduced in CocoaPods 1.4.0. Without this check, if a user were to
   # directly specify this podspec while using <1.4.0, ruby would throw an unknown method error.
